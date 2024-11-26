@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spending</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Spending</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="javascript:history.back()" class="back-button-fixed">Back</a>
+    </header>
+
+
+    <div class="image-container">
+        <img src="/images/image9.jpg">
+    </div>
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>Spending Problems</h2>
+        <p>No matter how hard you may try not to, you will have to spend money. 
+            Everyone has to spend money. Whether it be for grocies, housing, or just a particular item you want, you will no doubt spend money on a near daily basis in your adult life.</p>
+        <p> Some peoplem, however may spend too much. This could set them back in their financial goals by days, weeks, months, or years. Why would people do this to themselves? 
+            Well there are many reasons, including but not limited to advertising, emotional spending, impulse spending, intangible spending, and living beyond their means.</p>
+
+        <h3>Advertising</h3>
+        <p>Constant exposure to advertising across social media, television, and attached to every webpage lead many consumers to beleive that their happiness is tied to the items being advertised.
+            Advertisments also create new wants for consmers they would have otherwise never known about.</p>
+        <h3>Emotional Spending</h3>
+        <p>Many people use spending to deal with stress, depression, or boredom.</p>
+        <h3>Impulse Spending</h3>
+        <p>Unplanned spending that many sucumb to after being targeted by marketing. Espicially a problem for theose with a lack of self control.</p>
+        <h3>Intangible Spending</h3>
+        <p>With the introduction of debit cards, credit cards, tap-to-pay, and online payment systems consumers can feel like they are spending less than they otherwise would feel if they were handing over physical cash.</p>
+        <h3>Living Beyond Your Means</h3>
+        <p>Whether it be because of a fear of perception by others, a failure of financial intelligence, or simply as a lifestyle choice, many live beyond their means. 
+            They spend more than they earn and typically rely on debt to fund lavish lifestyles that lead them to financial ruin.</p>
+    </div>
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>Good Spending Habits</h2>
+        <h3>Budgeting</h3>
+        <p>To prevent bad spending habits leading you to financial ruin, start budgeting. A common budgeting strategy is the 50/30/20 rule. 
+            Set aside 50% of your income for needs, give yourself 30% to spend on whatever you want, and the remaining 20% should go toward savings, retirement, or debt. </p>
+        <p><i>Another part of this webpage goes over budgeting in more detail. It can be reached from the previous page.</i></p>
+        <h3>Needs Over Wants</h3>
+        <p>Before making a purchase, you should consider the nature of your purchase. Is this a necessity, or do you merely just want the item? 
+            If you could live on comfortably without the item, it's probably just a want. If, when you consider the nature of the purchase,
+             you make the choice to put the item back or otherwise not make the purchase, you have successfully shown restraint. Restraint is the main weapon you can use to fight against impulse spending.</p>
+        <h3>Financial Goal Setting</h3>
+        <p>By setting goals, you can reduce unneccessary spending. Use these goals like challenges, where you win a prize if you succeed. The prize could be anything from pure satisfaction to a nice dinner.</p>
+        <p><i>Another part of this webpage goes over budgeting in more detail. It can be reached by selecing "Saving" from the main page.</i></p>
+        <h3>Debit Instead of Credit</h3>
+        <p>By using a debit card or writing a check, you are spedning money you have already earned. This will prevent you from over spending, which you would be more likely to do when using a credit card. Better yet, use cash. 
+            Physically handing over cash helps you truly understand how much you are spending. Debit and credit cards mask how much you are spending to your brain; tap-to-pay using your phone is even worse.</p>
+        <p><i>Learn more about debit, credit, and the differences below.</i></p>
+        </div>
+
+        <!-- Multiple-choice question -->
+    <div class="text-area mcq-container">
+        <h3>Which habit is a good spending habit?</h3>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Putting every purchase on credit.</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Forgoing a plan or a budget.</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Actively considering needs versus wants.</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Making impulse purchases.</button>
+    </div>
+
+    <script>
+        function checkAnswer(selectedButton, answer) {
+            const buttons = document.querySelectorAll('.mcq-button');
+            buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+
+            if (answer === 'correct') {
+                selectedButton.classList.add('correct');
+            } else {
+                selectedButton.classList.add('incorrect');
+                // Highlight the correct button
+                buttons.forEach(button => {
+                    if (button.textContent === 'Actively considering needs versus wants.') {
+                        button.classList.add('correct');
+                    }
+                });
+            }
+        }
+    </script>
+
+    <div class="button-container-3">
+        <a href="/pages/basics_tree/debitVsCredit.html" class="button">Debit Versus Credit</a>
+    </div>
+
+</body>
+</html>

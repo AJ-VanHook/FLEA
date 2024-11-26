@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fees</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Fees</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="javascript:history.back()" class="back-button-fixed">Back</a>
+    </header>
+    
+    <div class="image-container">
+        <img src="/images/image20.jpg">
+    </div>
+    
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>Maintenance Fees</h2>
+        <p>These fees are charged monthly for maintaining your account. Sometimes these fees are waived if you attain a minimum balance, have a direct deposit, or if the institution offers a fee-free type of account.</p>
+        <h2>Statement Fees</h2>
+        <p>Some institutions charge a fee for sending you paper bank statements in the mail.</p>
+        <h2>Overdraft Fees</h2>
+        <p>If you spend more than your available balance, your bank will likely charge an overdraft fee and cover the difference.</p>
+        <h2>Returned Deposit Fees</h2>
+        <p>If you deposit a check that bounces, you will be charged a returned deposit fee.</p>
+        <h2>Stop Payment Fees</h2>
+        <p>If you write a check that needs to be stopped for any reason, you can contact your bank to stop the payment. They will charge a stop payment fee.</p>
+        <h2>ATM Fees</h2>
+        <p>If you withdraw money that is out of your bank's ATM network, you will be charged a small fee.</p>
+        <h2>Transfer Fees</h2>
+        <p>If you transfer money to a different account at a different banking institution, you will be charged a transfer fee. This fee is sometimes a percentage or sometimes fixed.</p>
+        <h2>Excess Transaction Fees</h2>
+        <p>This fee can be charged if you make to many transactions to an account with a transaction limit, usually a savings account.</p>
+    </div>
+
+        <!-- Multiple-choice question -->
+        <div class="text-area mcq-container">
+            <h3>Which fee are you charged if you spend more money than you have available in your account?</h3>
+            <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Returned Deposit Fees</button>
+            <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Transfer Fees</button>
+            <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Excess Transaction Fees</button>
+            <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Overdraft Fees</button>
+        </div>
+    
+        <script>
+            function checkAnswer(selectedButton, answer) {
+                const buttons = document.querySelectorAll('.mcq-button');
+                buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+    
+                if (answer === 'correct') {
+                    selectedButton.classList.add('correct');
+                } else {
+                    selectedButton.classList.add('incorrect');
+                    // Highlight the correct button
+                    buttons.forEach(button => {
+                        if (button.textContent === 'Overdraft Fees') {
+                            button.classList.add('correct');
+                        }
+                    });
+                }
+            }
+        </script>
+
+</body>
+</html>

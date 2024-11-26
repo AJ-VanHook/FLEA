@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Accounts</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Bank Accounts</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="javascript:history.back()" class="back-button-fixed">Back</a>
+    </header>
+
+
+
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>The First Step</h2>
+        <p>To take your very first step into the world of personal finance, you should open a checking account at a local bank branch. But there are many types of bank accounts, following is information to help you understand the most common banking accounts.</p>
+    </div>
+
+
+    <div class="image-container">
+        <img src="/images/image2.jpg">
+    </div>
+    
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>Types of Bank Accounts</h2>
+        <h3>Checking Accounts</h3>
+        <p>A checking account is the most basic type of bank account. No interest can be earned on this type of account. 
+            The money in the account is inactive unless you choose to transfer, spend, or withdraw it.</p>
+        <p>Checing accounts also allow you to use a debit card and checks to directly spend the money in the account without having to withdraw cash. 
+            Debit cards are relatively straight forward, only requiring a PIN number chosen by you for use. Checks can look confusing to someone who has never learned how to write one. 
+            See the page below to learn how to write a check.</p>
+        <h3>Savings Accounts</h3>
+        <p>A savings account is a bank account where the money inside earns interest over time. A savings account is a good way to set aside normal spending money. 
+            Typically, institutions will allow you to make six withdrawls per month; any withdrawls after that will have an excessive withdrawl fee.</p>
+        <h3>Money Market Accounts</h3>
+        <p>Money market accounts are not offered by every banking institution. They serve as a hybrid between checking and savings accounts.
+            The money within the account earns interest, but also allow you to spend the money within. The interest in these accounts is usually higher than that of a traditional savings account. Typically, you would have a limited number of withdrawls allowed per month (usally six).  </p>
+        <h3>Certificates of Deposit</h3>
+        <p>A certificate of deposit is a type of bank account which locks in the money you deposit for a specified period of time, typically with a higher interest rate. 
+            They are typically refered to as a CD. You should only deposit money you know you will not need to access during the length of the CD. </p>
+        <p>While you could take the money in a CD out before the speciifed time period is over, you will likely be charged with an early withdrawl penalty. </p>
+    </div>
+
+    <!-- Multiple-choice question -->
+    <div class="text-area mcq-container">
+        <h3>Which type of account does not earn interest?</h3>
+        <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Checking Account</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Savings Account</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Money Market Account</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Certificate of Deposit</button>
+    </div>
+
+    <script>
+        function checkAnswer(selectedButton, answer) {
+            const buttons = document.querySelectorAll('.mcq-button');
+            buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+
+            if (answer === 'correct') {
+                selectedButton.classList.add('correct');
+            } else {
+                selectedButton.classList.add('incorrect');
+                // Highlight the correct button
+                buttons.forEach(button => {
+                    if (button.textContent === 'Checking Account') {
+                        button.classList.add('correct');
+                    }
+                });
+            }
+        }
+    </script>
+
+    <div class="button-container-2">
+        <a href="/pages/basics_tree/fees.html" class="button">Fees</a>
+        <a href="/pages/basics_tree/check.html" class="button">How to Write a Check</a>
+    </div>
+
+</body>
+</html>

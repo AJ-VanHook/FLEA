@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Setting</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Goal Setting</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="page3.html" class="back-button-fixed">Back</a>
+    </header>
+
+    <div class="image-container">
+        <img src="/images/image17.jpg">
+    </div>
+
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>Why Use Goal-Setting</h2>
+        <p>Goal setting is one of the most powerful tools we have at our disposal. Goal setting should be used because it provides you with purpose, giving you direction toward a better financial well being. 
+        </p>
+        <h2>How to Create a Goal</h2>
+        <p>First, think of something you want to acheive. Now apply SMART goal setting.</p>
+        <ul>
+            <li>Specific</li>
+            <li>Measurable</li>
+            <li>Acheivable</li>
+            <li>Relevant</li>
+            <li>Time-bound</li>
+        </ul>
+        <p>By using SMART goal setting, you can make sure your goals are reasonable and actually help you acheive something.</p>
+        
+    </div>
+
+    <!-- Multiple-choice question -->
+    <div class="text-area mcq-container">
+        <h3>Is the following goal a SMART goal? Jeremy wants to learn how to ride a bike by the end of next month.</h3>
+        <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Yes</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">No</button>
+
+    </div>
+
+    <script>
+        function checkAnswer(selectedButton, answer) {
+            const buttons = document.querySelectorAll('.mcq-button');
+            buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+
+            if (answer === 'correct') {
+                selectedButton.classList.add('correct');
+            } else {
+                selectedButton.classList.add('incorrect');
+                // Highlight the correct button
+                buttons.forEach(button => {
+                    if (button.textContent === 'Yes') {
+                        button.classList.add('correct');
+                    }
+                });
+            }
+        }
+    </script>
+
+    
+
+    <!-- Button to return to main page -->
+    <div class="button-container-2">
+        <a href="shortTerm.html" class="button">Short-Term Goal-Setting</a>
+        <a href="longTerm.html" class="button">Long-Term Goal-Setting</a>
+    </div>
+
+</body>
+</html>

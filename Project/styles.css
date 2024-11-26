@@ -1,0 +1,283 @@
+/* Basic styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f3f3f3;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    width: 100%;
+}
+
+
+
+/* Text area styling */
+.text-area {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Button container styling for 3 columns and 2 rows */
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    gap: 10px;
+    margin: 20px 0;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Limit the maximum width */
+}
+
+/* Individual button styling */
+.button {
+    padding: 50px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+
+
+
+/* Header with button */
+.header-with-button {
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.header-with-button h1 {
+    margin-bottom: 5px;
+}
+
+.header-with-button p {
+    margin-top: 0;
+}
+
+/* Fixed position "Return to Main Page" button in top right corner */
+.return-button-fixed, .back-button-fixed {
+    position: fixed;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+/* Return to Main Page Button - Top Right */
+.return-button-fixed {
+    right: 10px;
+    top: 10px;
+}
+
+/* Back Button - Top Left */
+.back-button-fixed {
+    left: 10px;
+    top: 10px;
+}
+
+.return-button-fixed:hover {
+    background-color: #555;
+}
+
+
+/* Styling for Calculate button */
+.calculate-button {
+    padding: 12px 25px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+    background-color: #333; /* A distinct blue color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.calculate-button:hover {
+    background-color: #333; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly larger when hovered */
+}
+
+.calculate-button:active {
+    background-color: #333; /* Even darker blue when clicked */
+    transform: scale(0.98); /* Slightly smaller on click */
+}
+
+
+/* Center-align bullets and text in unordered lists */
+.text-area ul {
+    list-style-type: disc; /* Keeps the default bullet style */
+    list-style-position: inside; /* Ensures bullets are aligned with text */
+    text-align: center; /* Centers the entire list */
+    padding: 0; /* Removes default padding for the list */
+    margin: 0 auto; /* Centers the list container */
+
+}
+
+.text-area ul li {
+    margin-bottom: 10px; /* Adds space between each list item */
+}
+
+/* Button container styling for 2 columns and 2 rows */
+.button-container-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Limit the maximum width */
+}
+
+/* Button container styling for 1 column and 2 rows */
+.button-container-3 {
+    display: grid;
+    grid-template-columns: repeat(1fr); /* Create 2 equal columns */
+    gap: 10px;
+    margin: 20px auto;
+    width: 80%; /* Adjust width as needed */
+    max-width: 800px; /* Limit the maximum width */
+}
+
+
+.mcq-container {
+    margin: 20px 0;
+}
+.mcq-button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.mcq-button.correct {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+.mcq-button.incorrect {
+    background-color: #F44336; /* Red */
+    color: white;
+}
+.mcq-button:disabled {
+    cursor: not-allowed;
+}
+
+
+.image-container {
+    border: 2px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.image-container img {
+    display: block; /* Treat the image as a block-level element */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+    max-width: 100%; /* Adjust this value to control image size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Container for the slideshow */
+.slideshow-container {
+    max-width: 800px;
+    position: static;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Slide images */
+.mySlides {
+    display: none;
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* Next and previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    user-select: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.6);
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* Dots for navigation */
+.dot-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}

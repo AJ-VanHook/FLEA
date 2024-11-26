@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debit Vs. Credit</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Debit Vs. Credit</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="javascript:history.back()" class="back-button-fixed">Back</a>
+    </header>
+
+    <div class="image-container">
+        <img src="/images/image8.jpg">
+    </div>
+
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>Debit</h2>
+        <p>By using debit, usually with a debit card or by writing a check, you are spending money you already have earned.</p>
+        <h2>Credit</h2>
+        <p>By using credit, usually with a credit card, you are incuring debt that you promise to repay later, typically monthly. </p>
+        <p>If you do not repay the charge within a specified period of time, you will be charged interest, usually at a high rate. This is how credit card companies make money by allowing you to spend their money.</p>
+    </div>
+            <!-- Multiple-choice question -->
+    <div class="text-area mcq-container">
+        <h3>Do purchases made on credit incur interest?</h3>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Yes, immediately.</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Yes, but only after a specified period of time has passed.</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Yes, but the interest is limited.</button>
+        <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">No, never.</button>
+    </div>
+
+    <script>
+        function checkAnswer(selectedButton, answer) {
+            const buttons = document.querySelectorAll('.mcq-button');
+            buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+
+            if (answer === 'correct') {
+                selectedButton.classList.add('correct');
+            } else {
+                selectedButton.classList.add('incorrect');
+                // Highlight the correct button
+                buttons.forEach(button => {
+                    if (button.textContent === 'Yes, but only after a specified period of time has passed.') {
+                        button.classList.add('correct');
+                    }
+                });
+            }
+        }
+    </script>
+
+</body>
+</html>

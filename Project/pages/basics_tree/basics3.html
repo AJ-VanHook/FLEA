@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgeting</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Budgeting</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="javascript:history.back()" class="back-button-fixed">Back</a>
+    </header>
+
+    <div class="image-container">
+        <img src="/images/image7.jpg">
+    </div>
+
+    <div class="text-area">
+        <h2>The Most Useful Tool</h2>
+        <p>A budget truly is the most useful tool anyone has in their arsenal concerning personal finance. It can carry you through chaos because a budget is a plan. 
+            Planning out your cash flows on a monthly basis is important to truly becoming a personal finance professional.</p>
+        <h3>Budgeting Behaviors</h3>
+        <p>Budgeting is realistically about changing your behaviors, which is not an instantaneous process. It takes time. But over time, you may notice you make intelligent financial decisions more often, and without thinking.</p>
+    </div>
+    <div class="text-area">
+        <h2>How to Budget</h2>
+        <p>Budgeting correctly the first time isn't easy, and it's nearly impossible to createa comprehensive budget the first time. So start simple. Create a budget thats easy to follow. 
+            The easiest and most simple budget is a percentage based budget where you take your income and split it up.</p>
+            <p> A common percentage based budget is the 50-30-20 budget. 
+            This budget has you set aside 50% of your budget for your needs, 30% for your wants, and 20% for saving. This is a great place to start. You don't have to think much about this budget; 
+            simply withdraw your spending money as cash, leave your money for your needs in your checking account, and set aside your 20% in a savings account. 
+            You can make this as simple or as complicated as you want. Whatever works best for you!</p>
+            <p>You can even change the percentages of this particular style to best suit your needs. For example, if you live with your parents, you (most likely) aren't paying rent; reduce your needs percentage and increase one of the others (hopefully your saving percentage). Play around with the tool below. It will take your income, what percentages you would like to set in each category and give you a budget to follow.</p>
+    </div>
+
+    <!-- Input fields and button -->
+    <div class="text-area">
+        <h2>Simple Budgeting Tool</h2>
+        <label for="income">Total Income:</label>
+        <input type="number" id="income" class="text-input" placeholder="e.g., 1000" min="0"> <br> <br>
+
+        <label for="percentage1">Percentage for Needs (%):</label>
+        <input type="number" id="percentage1" class="text-input" placeholder="e.g., 50" min="0" max="100"><br> <br>
+
+        <label for="percentage2">Percentage for Wants (%):</label>
+        <input type="number" id="percentage2" class="text-input" placeholder="e.g., 30" min="0" max="100"><br> <br>
+
+        <label for="percentage3">Percentage Saved (%):</label>
+        <input type="number" id="percentage3" class="text-input" placeholder="e.g., 20" min="0" max="100"><br> <br>
+
+        <button onclick="generatePieChart()" class="calculate-button">Generate Pie Chart</button>
+    </div>
+
+    <!-- Canvas for the chart and Results -->
+    <div class="text-area" style="width: 50%; margin: 20px auto; text-align: center; display: none;" id="breakdownSection">
+        <h2>Breakdown</h2>
+        <canvas id="pieChart" width="150" height="150"></canvas>
+        <p id="result1"></p>
+        <p id="result2"></p>
+        <p id="result3"></p>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        let pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Needs', 'Spending Money', 'Save'],
+                datasets: [{
+                    label: 'Income Distribution',
+                    data: [0, 0, 0],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom', // Move legend to the bottom
+                    },
+                },
+            }
+        });
+
+        // Function to generate the pie chart
+        function generatePieChart() {
+            // Get user inputs
+            const income = parseFloat(document.getElementById('income').value) || 0;
+            const percentage1 = parseFloat(document.getElementById('percentage1').value) || 0;
+            const percentage2 = parseFloat(document.getElementById('percentage2').value) || 0;
+            const percentage3 = parseFloat(document.getElementById('percentage3').value) || 0;
+
+            // Validate percentages
+            const totalPercentage = percentage1 + percentage2 + percentage3;
+            if (totalPercentage !== 100) {
+                alert('The percentages must add up to 100%');
+                return;
+            }
+
+            // Calculate amounts
+            const amount1 = (income * percentage1) / 100;
+            const amount2 = (income * percentage2) / 100;
+            const amount3 = (income * percentage3) / 100;
+
+            // Update chart data
+            pieChart.data.datasets[0].data = [amount1, amount2, amount3];
+            pieChart.update();
+
+            // Display results
+            document.getElementById('result1').textContent = `Needs: $${amount1.toFixed(2)} (${percentage1}%)`;
+            document.getElementById('result2').textContent = `Wants: $${amount2.toFixed(2)} (${percentage2}%)`;
+            document.getElementById('result3').textContent = `Saved: $${amount3.toFixed(2)} (${percentage3}%)`;
+
+            // Show the breakdown section
+            document.getElementById('breakdownSection').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

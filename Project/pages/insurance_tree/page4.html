@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Insurance</h1>
+        <a href="/pages/welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="../welcome.html" class="back-button-fixed">Back</a>
+    </header>
+
+    <div class="image-container">
+        <img src="/images/image11.jpg">
+    </div>
+
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>What is Insurance?</h2>
+        <p>Insurance is a tool you should use to reduce the amount you need to pay during an event. Events can be anything from a doctor's office visit to a house fire. What is covered is dependent to what types of insurance that you have.</p>
+        <p>When you get insurance, you will pay a premium to keep coverage. This premium will vary due to many factors like deductibles and stop-loss amounts (out-of-pocket maximums).</p>
+        <h2>Why Have Insurance?</h2>
+        <p>The main reason you should have insurance is to reduce your risk. Think about it like this, if you are seriously injured and need a surgery to maintain a good quality of life,
+            someone has to foot the entire bill. If you do not have health insurance, you may be left financially destitue. If you do have health insurance, the insurance will help you pay a large amount of your medical bills, leaving you financially well off.
+        </p>
+        <h2>What is a Deductible?</h2>
+        <p>In theory, a deductible is basically the amount that you pay before the insurance begins to pay. In practice, this is not always true. Your insurance will likely fully cover some claims before you reach your deductible.</p>
+        <p>For example, if you visit your doctor for a check-up, your health insurance may completely cover the service without applying any amount toward your deductible. If you visit the emergency room the week after, you may be charged for every service up to your deductible being met.</p>
+        <p>So, what happens after you meet your deductible? Your insurance begins to cover your claims, typically not completely, but at a high percent. Eventually, if you continue to make claims, you may reach your out-of-pocket maximum, depending on the type of insurance you are making claims with. After your out-of-pocket maximum is met, your insurance will completely cover the costs associated with any claims.</p>
+
+        
+    </div>
+
+            <!-- Multiple-choice question -->
+            <div class="text-area mcq-container">
+                <h3>What are you charged to keep insurance coverage?</h3>
+                <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Your deductible</button>
+                <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Insurance fees</button>
+                <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Stop-losses</button>
+                <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Premiums</button>
+            </div>
+        
+            <script>
+                function checkAnswer(selectedButton, answer) {
+                    const buttons = document.querySelectorAll('.mcq-button');
+                    buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+        
+                    if (answer === 'correct') {
+                        selectedButton.classList.add('correct');
+                    } else {
+                        selectedButton.classList.add('incorrect');
+                        // Highlight the correct button
+                        buttons.forEach(button => {
+                            if (button.textContent === 'Premiums') {
+                                button.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            </script>
+
+    <!-- Button to return to main page -->
+    <div class="button-container">
+        <a href="coversYou.html" class="button">Covers You</a>
+        <a href="coversYourFamily.html" class="button">Covers Your Family</a>
+        <a href="coversYourProperty.html" class="button">Covers Your Property</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <!-- Header section -->
+    <header>
+        <h1>Interest</h1>
+        <a href="../welcome.html" class="return-button-fixed">Return to Main Page</a>
+        <a href="../welcome.html" class="back-button-fixed">Back</a>
+    </header>
+
+    <div class="image-container">
+        <img src="/images/image7.jpg">
+    </div>
+
+    <!-- Main content area for information -->
+    <div class="text-area">
+        <h2>What is Interest</h2>
+        <p>Interest is what you owe for borrrowing money. Interest rates are determined by the Federal Reserve. Basically, interest is what those who loan you money earn by incurring risk when they loan you money.</p>
+        <p>For example, if you want to purchase a home for $250,000, but do not have that amount of money, you will need to take out a loan from a bank. Whatever this loan amount is for, you will end up paying back more when you pay off your loan. This is because you pay interest on the capital you initially borrowed.</p>
+        <h2>The Two Main Types of Interest</h2>
+        <h3>Simple Interest</h3>
+        <p>This type of interest is a set rate on the initial amount borrowed. This is the type of interest you want to take on when you take a loan.</p>
+        <h3>Compounding Interest</h3>
+        <p>This type of interest is a set rate on the initial amount borrowed and any accured interest. This would be the type of interest you want to use to become wealthy.</p>
+    </div>
+
+            <!-- Multiple-choice question -->
+            <div class="text-area mcq-container">
+                <h3>What is the difference between compounding and simple interest?</h3>
+                <button class="mcq-button" onclick="checkAnswer(this, 'incorrect')">Simple interest incurs interest on the initial amount borrowed and any accured interest. Compounding does not.</button>
+                <button class="mcq-button" onclick="checkAnswer(this, 'correct')">Compound interest incurs interest on the initial amount borrowed and any accured interest. Simple does not.</button>
+            </div>
+        
+            <script>
+                function checkAnswer(selectedButton, answer) {
+                    const buttons = document.querySelectorAll('.mcq-button');
+                    buttons.forEach(button => button.disabled = true); // Disable all buttons after an answer is chosen
+        
+                    if (answer === 'correct') {
+                        selectedButton.classList.add('correct');
+                    } else {
+                        selectedButton.classList.add('incorrect');
+                        // Highlight the correct button
+                        buttons.forEach(button => {
+                            if (button.textContent === 'Compound interest incurs interest on the initial amount borrowed and any accured interest. Simple does not.') {
+                                button.classList.add('correct');
+                            }
+                        });
+                    }
+                }
+            </script>
+
+    <!-- Button to return to main page -->
+    <div class="button-container-3">
+        <a href="howToUseInterest.html" class="button">How to Use Interest</a>
+    </div>
+
+</body>
+</html>
